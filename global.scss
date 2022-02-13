@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// 根元素上的font-size设定，可能用于rem布局？
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+} /*>=1024的设备*/
+
+@media (min-width: 1100px) {
+  html {
+    font-size: 20px;
+  }
+} /*>=1100的设备*/
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 22px;
+  }
+} /*>=1280的设备*/
+
+@media (min-width: 1366px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1680px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 33px;
+  }
+}
+
+// 公共属性
+// 诸如li、ul、a等等
+
+// 公共颜色
+$BASE_COLOR: #527474;
+// 阴影
+$BASE_SHADOW: 2px 2px 6px #bfbfbf;
+// ui图的宽
+$BASE_VW: 1920px;
+// ui图的高
+$BASE_VH: 1080px;
+
+// 布局换算
+// 宽
+@function getWidth($width) {
+  @return $width/$BASE_VW * 100vw;
+}
+
+// 高
+@function getHeight($height) {
+  @return $height/$BASE_VH * 100vh;
+}
+
+// 字体行高用rem似乎更好？
+// 字体的大小
+@function getFontSize($size) {
+  @return $size/$BASE_VH * 100vh;
+}
+
+// 行高
+@function getLineHeight($line) {
+  @return $line/$BASE_VH * 100vh;
+}
+
+// padding
+@mixin getPadding($top, $right, $bottom, $left) {
+  padding-top: $top / $BASE_VH * 100vh;
+  padding-right: $right / $BASE_VW * 100vw;
+  padding-bottom: $bottom / $BASE_VH * 100vh;
+  padding-left: $left / $BASE_VW * 100vw;
+}
+
+//   margin
+@mixin getMargin($top, $right, $bottom, $left) {
+  margin-top: $top / $BASE_VH * 100vh;
+  margin-right: $right / $BASE_VW * 100vw;
+  margin-bottom: $bottom / $BASE_VH * 100vh;
+  margin-left: $left / $BASE_VW * 100vw;
+}
