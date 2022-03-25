@@ -1,0 +1,39 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.tree-item {
+  margin-left: 20px;
+  display: flex;
+}
+
+.opened {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.opened.yes {
+  background-color: blueviolet;
+}
+
+.checkbox.yes {
+  background-color: yellow;
+  border-radius: 0%;
+}
+
+.checkbox.partial {
+  background-color: aqua;
+}
